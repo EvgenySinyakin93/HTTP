@@ -13,8 +13,6 @@ public class Post {
         private final String type;
         private final String user;
         private final Integer upvotes;
-
-        // Конструктор со всеми параметрами для удобства создания объектов
         public Post(
                 @JsonProperty("id") String id,
                 @JsonProperty("text") String text,
