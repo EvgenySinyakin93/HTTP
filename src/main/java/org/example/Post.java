@@ -1,11 +1,8 @@
 package org.example;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
-import lombok.Getter;
-import lombok.ToString;
 
-@ToString
-@Getter
+
 @Data
 public class Post {
     int userId;
@@ -28,7 +25,7 @@ public class Post {
     @Override
     public String toString() {
         return "Post" +
-                "\n userId=" + userId+
+                "\n userId=" + userId +
                 "\n id=" + id +
                 "\n title=" + title +
                 "\n body=" + body;
