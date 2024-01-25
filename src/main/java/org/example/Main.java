@@ -33,10 +33,11 @@ public class Main {
         CloseableHttpResponse response = httpClient.execute(request);
         Arrays.stream(response.getAllHeaders()).forEach(System.out::println);
 
-        List<Post> posts = mapper.readValue(response.getEntity().getContent(), new TypeReference<>() {});
+        List<Post> posts = mapper.readValue(response.getEntity().getContent(), new TypeReference<>() {
+        });
 
         posts.stream()
-                .filter(post -> post.getId() == "1")
+                .filter(post -> post.getUpvotes() != null)
         .forEach(System.out::println);
     }
 }

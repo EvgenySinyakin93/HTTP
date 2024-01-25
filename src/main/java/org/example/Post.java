@@ -1,33 +1,31 @@
 package org.example;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
+import lombok.ToString;
+
 
 
 @Data
 public class Post {
-    int userId;
-    String id;
-    String title;
-    String body;
+        private final String id;
+        private final String text;
+        private final String type;
+        private final String user;
+        private final Integer upvotes;
 
-    public Post(
-            @JsonProperty("userId") int userId,
-            @JsonProperty("id") String id,
-            @JsonProperty("title") String title,
-            @JsonProperty("body") String body
-    ) {
-        this.userId = userId;
-        this.id = id;
-        this.title = title;
-        this.body = body;
+        // Конструктор со всеми параметрами для удобства создания объектов
+        public Post(
+                @JsonProperty("id") String id,
+                @JsonProperty("text") String text,
+                @JsonProperty("type") String type,
+                @JsonProperty("user") String user,
+                @JsonProperty("upvotes") Integer upvotes
+        ) {
+            this.id = id;
+            this.text = text;
+            this.type = type;
+            this.user = user;
+            this.upvotes = upvotes;
+        }
     }
-
-    @Override
-    public String toString() {
-        return "Post" +
-                "\n userId=" + userId +
-                "\n id=" + id +
-                "\n title=" + title +
-                "\n body=" + body;
-    }
-}
