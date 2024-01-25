@@ -36,7 +36,7 @@ public class Main {
         List<Post> posts = mapper.readValue(response.getEntity().getContent(), new TypeReference<>() {});
 
         posts.stream()
-                .filter(post -> post.getId() == 1)
+                .filter(post -> post.getId() == "1")
         .forEach(System.out::println);
     }
 }
